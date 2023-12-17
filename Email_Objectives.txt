@@ -7,5 +7,5 @@
 7. People Signed up by State
 8. People Signed up by City
 9. People Signed up by Year
-10. People Signed up by Month
+10. Signed up by Age Group
 
