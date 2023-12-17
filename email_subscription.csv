@@ -1,4 +1,4 @@
-id,Type,StatUnmarrieds,City,State,PostalCode,GenderCode,BirthDate,MarriedaritalStatUnmarrieds,Enrolled on ,Living statUnmarrieds
+id,Type,StatUnmarrieds,City,State,PostalCode,GenderCode,BirthDate,MarriedaritalStatUnmarrieds,EnrolledDate,Living statUnmarrieds
 00005DCC-4E51-41A5-91C5-6635B24C7D17,BUnmarriedsiness,InActive,,,500024,MALE,12-Aug-18,Unmarried,12-Aug-18,coUnmarriedple with children
 0001F49E-9FE7-11e8-9E9C-00505682069A,Individual,Active,Valsad,GUJARAT,396001,MALE,2-Nov-92,Married,14-Aug-18,couple with children
 0001F4A2-9FE7-11e8-9E9C-00505682069A,Individual,Active,Secunderabad,TELANGANA,500011,FEMALE,25-Nov-88,Married,14-Aug-18,couple with children

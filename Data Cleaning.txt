@@ -1,46 +1,24 @@
 Email Subscription Data Cleaning
 
-1. Change column names StatUnmarrieds
-, MarriedaritalStatUnmarrieds and Living_statUnmarrieds
-  (EXEC sp_rename 'email_tbl.MarriedaritalStatUnmarrieds', 'MarritalStatus', 'COLUMN';)
+1. Correct column name errors: GenderCode to Gender, StatUnmarrieds to Status
+, MarriedaritalStatUnmarrieds to Marital_Status and Living_statUnmarrieds to Living_Status
+  
 
-2. Group Gender to Male, female and Other
-UPDATE email_tbl
-SET Type = "Not Mention"
-WHERE Type = OTHER;
+2. Replace Not Mentioned with Other under Gender column
 
-3. Group Type into Individual and Business
+3. Correct IndividUnmarriedal to Individual and BUnmarriedsiness to Business under Type column
 
-UPDATE email_tbl
-SET Type = "Individual"
-WHERE Type = IndividUnmarriedal;
+4. Correct coUnmarriedple with children to Couple Unmarried with children and 
+CoUnmarriedple withoUnmarriedt children to Couple Unmarried without children under Living_Status column
 
-UPDATE email_tbl
-SET Type = "Business"
-WHERE Type = BUnmarriedsiness;
+5. Transform values under the following columns State, Gender, and Living Status to Proper Cases
 
-4. Group Living Status into couple with children, couple without children
- and Single/Living alone
+6.Create a new column Day and extract May from date under Enrolled on column 
 
-UPDATE email_tbl
-SET Type = "couple with children"
-WHERE Type = "coUnmarriedple with children";
+7. Create a new column Month and extract Month from date under Enrolled on column
 
-UPDATE email_tbl
-SET Type = "couple with children"
-WHERE Type = "CoUnmarriedple withoUnmarriedt children";
+8. Create a new column Year and extract Year from date under Enrolled on column
+
+10. Create a new column Age and Calculate year from BirthDate column
 
 
-5. Transform column State, Gender, and Living Status to Proper Cases
-UPDATE email_tbl
-SET State =
-  UPPER(SUBSTRING(State, 1, 1)) +
-  LOWER(SUBSTRING(State, 2, LEN(State) - 1));
-
-
-6. Split Year from Date
-ALTER TABLE email_tbl
-ADD EnrolledYear INT;
-
-UPDATE email_tbl
-SET EnrolledYear = YEAR(Enrolled_on);
