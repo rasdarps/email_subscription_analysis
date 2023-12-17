@@ -1,0 +1,46 @@
+Email Subscription Data Cleaning
+
+1. Change column names StatUnmarrieds
+, MarriedaritalStatUnmarrieds and Living_statUnmarrieds
+  (EXEC sp_rename 'email_tbl.MarriedaritalStatUnmarrieds', 'MarritalStatus', 'COLUMN';)
+
+2. Group Gender to Male, female and Other
+UPDATE email_tbl
+SET Type = "Not Mention"
+WHERE Type = OTHER;
+
+3. Group Type into Individual and Business
+
+UPDATE email_tbl
+SET Type = "Individual"
+WHERE Type = IndividUnmarriedal;
+
+UPDATE email_tbl
+SET Type = "Business"
+WHERE Type = BUnmarriedsiness;
+
+4. Group Living Status into couple with children, couple without children
+ and Single/Living alone
+
+UPDATE email_tbl
+SET Type = "couple with children"
+WHERE Type = "coUnmarriedple with children";
+
+UPDATE email_tbl
+SET Type = "couple with children"
+WHERE Type = "CoUnmarriedple withoUnmarriedt children";
+
+
+5. Transform column State, Gender, and Living Status to Proper Cases
+UPDATE email_tbl
+SET State =
+  UPPER(SUBSTRING(State, 1, 1)) +
+  LOWER(SUBSTRING(State, 2, LEN(State) - 1));
+
+
+6. Split Year from Date
+ALTER TABLE email_tbl
+ADD EnrolledYear INT;
+
+UPDATE email_tbl
+SET EnrolledYear = YEAR(Enrolled_on);
