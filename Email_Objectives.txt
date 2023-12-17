@@ -1,10 +1,11 @@
 1. Total Subscribers
 2. People Signed up by gender
-3. Active user Status 
-4. People Signed up by Marital Status 
-5. People Signed up by Living Status 
-6. People Signed up by State
-7. People Signed up by City
-8. People Signed up by Year
-8. People Signed up by Month
+3. Signed up by Type 
+4. Active user Status 
+5. People Signed up by Marital Status 
+6. People Signed up by Living Status 
+7. People Signed up by State
+8. People Signed up by City
+9. People Signed up by Year
+10. People Signed up by Month
 
